@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/0c608f6c6b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/homeStyle.css" />
+    <title>CSV Uploader</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div id="heading">
+          <i class="fa-solid fa-file-csv fa-beat" id="icon"></i>
+          <h1 id="titleHeading">CSV Uploader</h1>
+        </div>
+      </header>
+
+      <main id="addFileSection">
+           <div>
+              <form action="/uploadsCSV" method="post" enctype="multipart/form-data" id="form-section">
+                <input type="file" id="fileInput" name="csvFile" accept=".csv" />
+                <button id="uploadBtn"> <i class="fa-solid fa-upload"></i> </button>
+              </form>
+           </div>
+
+           
+           <h1 id="listTitle">List of Uploaded CSV Files</h1>
+
+            <div id="fileDetails">
+              
+              <table>
+                <tr>
+                    <th> File Name </th>
+                    <th> Created Date </th>
+                    <th> </th>
+                </tr>
+                
+                <% files.forEach(file => { %>
+                  <tr>
+                    <!-- <a href="<%= file.filePath %>"> <%= file.filePath %> </a> -->
+                    <td> 
+                      <a href="/viewCSV/<%= file._id %>"> <%= file.fileName %> </a>
+                    </td>
+                    <td>
+                      <%- file.createdAt.toString().slice(0, 25) %>
+                    </td>
+                    <td>
+                      <a href="/deleteCSV/?id=<%- file._id %>">
+                        <i class="fa-solid fa-trash fa-xs" style="color: #ac1111"> </i>
+                      </a>
+                    </td>
+                  </tr>
+
+                <% }); %>
+                    
+              </table>
+
+                  
+            </div>
+      </main>
+    </div>
+  </body>
+</html>

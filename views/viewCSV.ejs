@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>CSV File Data</title>
+  </head>
+  <body>
+    <a href="/">Back to list</a>
+    <h1>Content of <%= file.fileName %> file</h1>
+
+    <input type="textarea" id="searchData" placeholder="Search..." row:"10" />
+
+    <table id="tableID" border="1">
+      <thead>
+        <tr>
+          <% if (data.length > 0) { %> <% Object.keys(data[0]).forEach(header =>
+          { %>
+          <th><%= header %></th>
+          <% }); %> <% } %>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(row => { %>
+        <tr>
+          <% Object.values(row).forEach(value => { %>
+          <td><%= value %></td>
+          <% }); %>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <script>
+      // Embed the data from the server as a properly escaped JSON string
+      const dataFromServer = <%- JSON.stringify(data) %>;
+    </script>
+
+    <script src="/javascript_file/script.js"></script>
+  </body>
+</html>
