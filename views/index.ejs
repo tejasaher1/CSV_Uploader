@@ -22,7 +22,8 @@
       <main id="addFileSection">
            <div>
               <form action="/uploadsCSV" method="post" enctype="multipart/form-data" id="form-section">
-                <input type="file" id="fileInput" name="csvFile" accept=".csv" />
+                <label for="csvFile"> Upload file here... </label>
+                <input type="file" id="fileInput" name="csvFile" accept=".csv"  />
                 <button id="uploadBtn"> <i class="fa-solid fa-upload"></i> </button>
               </form>
            </div>
@@ -42,15 +43,15 @@
                 <% files.forEach(file => { %>
                   <tr>
                     <!-- <a href="<%= file.filePath %>"> <%= file.filePath %> </a> -->
-                    <td> 
+                    <td style="width: 70% ;"> 
                       <a href="/viewCSV/<%= file._id %>"> <%= file.fileName %> </a>
                     </td>
-                    <td>
+                    <td style="width: 20% ;">
                       <%- file.createdAt.toString().slice(0, 25) %>
                     </td>
-                    <td>
+                    <td style="width: 10% ;">
                       <a href="/deleteCSV/?id=<%- file._id %>">
-                        <i class="fa-solid fa-trash fa-xs" style="color: #ac1111"> </i>
+                        <i class="fa-solid fa-trash fa-xs" style="position: relative;color: #ac1111;font-size:20px; top:5px "> </i>
                       </a>
                     </td>
                   </tr>

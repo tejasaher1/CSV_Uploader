@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>CSV File Data</title>
-  </head>
-  <body>
-    <a href="/">Back to list</a>
-    <h1>Content of <%= file.fileName %> file</h1>
+</head>
+<body>
+    <button> <a href="/">Back to list</a> </button>
+    <h1 id="fileName">Content of <%= file.fileName %> file</h1>
 
-    <input type="textarea" id="searchData" placeholder="Search..." row:"10" />
+    <input id="searchData" type="text" placeholder="Search..." />
 
-    <table id="tableID" border="1">
-      <thead>
-        <tr>
-          <% if (data.length > 0) { %> <% Object.keys(data[0]).forEach(header =>
-          { %>
-          <th><%= header %></th>
-          <% }); %> <% } %>
-        </tr>
-      </thead>
-      <tbody>
-        <% data.forEach(row => { %>
-        <tr>
-          <% Object.values(row).forEach(value => { %>
-          <td><%= value %></td>
-          <% }); %>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
+    <div id="tableInfo">
+        <table id="tableID" border="1">
+            <thead>
+                <tr>
+                    <% if (data.length > 0) { %>
+                        <% Object.keys(data[0]).forEach(header => { %>
+                            <th><%= header %></th>
+                        <% }); %>
+                    <% } %>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(row => { %>
+                    <tr>
+                        <% Object.values(row).forEach(value => { %>
+                            <td><%= value %></td>
+                        <% }); %>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination">
+        <% if (currentPage > 1) { %>
+            <a href="/viewCSV/<%= file._id %>?page=<%= currentPage - 1 %>&limit=10">Previous</a>
+        <% } %>
+        <span>Page <%= currentPage %> of <%= totalPages %></span>
+        <% if (currentPage < totalPages) { %>
+            <a href="/viewCSV/<%= file._id %>?page=<%= currentPage + 1 %>&limit=10">Next</a>
+        <% } %>
+    </div>
 
     <script>
-      // Embed the data from the server as a properly escaped JSON string
-      const dataFromServer = <%- JSON.stringify(data) %>;
+       const dataFromServer = <%- JSON.stringify(allData) %>
     </script>
 
     <script src="/javascript_file/script.js"></script>
-  </body>
+</body>
 </html>
