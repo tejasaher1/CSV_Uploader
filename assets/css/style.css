@@ -2,15 +2,33 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background-color: #f8f9fa;
     color: #333;
+  }
+
+  #mainContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-image: linear-gradient(45deg,#3600e6,#c93bfc); */
+    text-align: center;
+  }
+
+  #topArea{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-image: linear-gradient(45deg,#3600e6,#c93bfc);
+    color: white;
   }
   
   /* Button Styles */
   button {
+    position: relative;
     background-color: #007bff;
-    border: none;
+    left: 43%;
+    /* border: none; */
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -33,7 +51,7 @@ body {
   
   /* Input Styles */
   #searchData {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin: 20px 0;
     box-sizing: border-box;
@@ -45,6 +63,8 @@ body {
   /* Table Styles */
   #tableInfo {
     overflow-x: auto;
+    padding: 0px 10px 10px 10px;
+
   }
   
   table {
@@ -60,7 +80,7 @@ body {
   }
   
   th {
-    background-color: #007bff;
+    background-image: linear-gradient(45deg,#3600e6,#c93bfc);
     color: white;
   }
   
@@ -83,8 +103,10 @@ body {
 
   /* Pagination Styles */
 .pagination {
+    position: relative;
     margin-top: 20px;
     text-align: center;
+    bottom: 20px;
 }
 
 .pagination a {

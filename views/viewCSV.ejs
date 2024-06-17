@@ -7,42 +7,47 @@
     <title>CSV File Data</title>
 </head>
 <body>
-    <button> <a href="/">Back to list</a> </button>
-    <h1 id="fileName">Content of <%= file.fileName %> file</h1>
+    
+    <div id="mainContainer">
+        <div id="topArea">
+            <button id="btn"> <a href="/">Back to list</a> </button>
+            <h1 id="fileName">Content of <%= file.fileName %> file</h1>
+        </div>
 
-    <input id="searchData" type="text" placeholder="Search..." />
+        <input id="searchData" type="text" placeholder="Search here..." />
 
-    <div id="tableInfo">
-        <table id="tableID" border="1">
-            <thead>
-                <tr>
-                    <% if (data.length > 0) { %>
-                        <% Object.keys(data[0]).forEach(header => { %>
-                            <th><%= header %></th>
-                        <% }); %>
-                    <% } %>
-                </tr>
-            </thead>
-            <tbody>
-                <% data.forEach(row => { %>
+        <div id="tableInfo">
+            <table id="tableID" border="1">
+                <thead>
                     <tr>
-                        <% Object.values(row).forEach(value => { %>
-                            <td><%= value %></td>
-                        <% }); %>
+                        <% if (data.length > 0) { %>
+                            <% Object.keys(data[0]).forEach(header => { %>
+                                <th><%= header %></th>
+                            <% }); %>
+                        <% } %>
                     </tr>
-                <% }); %>
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                    <% data.forEach(row => { %>
+                        <tr>
+                            <% Object.values(row).forEach(value => { %>
+                                <td><%= value %></td>
+                            <% }); %>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
 
-    <div class="pagination">
-        <% if (currentPage > 1) { %>
-            <a href="/viewCSV/<%= file._id %>?page=<%= currentPage - 1 %>&limit=10">Previous</a>
-        <% } %>
-        <span>Page <%= currentPage %> of <%= totalPages %></span>
-        <% if (currentPage < totalPages) { %>
-            <a href="/viewCSV/<%= file._id %>?page=<%= currentPage + 1 %>&limit=10">Next</a>
-        <% } %>
+        <div class="pagination">
+            <% if (currentPage > 1) { %>
+                <a href="/viewCSV/<%= file._id %>?page=<%= currentPage - 1 %>&limit=10">Previous</a>
+            <% } %>
+            <span>Page <%= currentPage %> of <%= totalPages %></span>
+            <% if (currentPage < totalPages) { %>
+                <a href="/viewCSV/<%= file._id %>?page=<%= currentPage + 1 %>&limit=10">Next</a>
+            <% } %>
+        </div>
     </div>
 
     <script>

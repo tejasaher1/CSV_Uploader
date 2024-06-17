@@ -48,29 +48,6 @@ app.post('/uploadsCSV', function(req, res){
 });
 
 
-/// This is code for csv- reader -
-// app.get('/viewCSV/:id', async (req, res) => {
-//     try {
-//         const file = await fileModel.findById(req.params.id);
-//         if (!file) {
-//             return res.status(404).send('File not found');
-//         }
-
-//         const results = [];
-//         fs.createReadStream(path.join(__dirname, file.filePath))
-//             .pipe(csv())
-//             .on('data', (data) => results.push(data))
-//             .on('end', () => {
-//                 res.render('viewCSV', { file: file, data: results });
-//             });
-//     } catch (err) {
-//         console.error('Error reading the file:', err);
-//         res.status(500).send('Error reading file');
-//     }
-// });
-
-
-
 app.get('/viewCSV/:id', async (req, res) => {
     try {
         const file = await fileModel.findById(req.params.id);
@@ -107,7 +84,7 @@ app.get('/viewCSV/:id', async (req, res) => {
 
 
 
-app.get('/deleteCSV',async function(req, res){
+app.post('/deleteCSV',async function(req, res){
     const fileID = req.query.id;
     const file = await fileModel.findById(fileID);
     fs.unlink(path.join(__dirname,file.filePath), function(error){
@@ -118,6 +95,7 @@ app.get('/deleteCSV',async function(req, res){
         fileModel.findByIdAndDelete(fileID)
         .then(function(deletedFile){
             console.log('File deleted successfully');
+            return res.redirect('back');
         })
         .catch(function(err){
             console.error('Error deleting file:', err);
@@ -125,7 +103,6 @@ app.get('/deleteCSV',async function(req, res){
         })  
         
     })
-    return res.redirect('back');
 })
 
 

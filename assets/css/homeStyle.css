@@ -1,96 +1,116 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(45deg,#3600e6,#c93bfc);
-    /* background-color: grey; */
-
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #3600e6, #c93bfc);
+  /* background-color: grey; */
 }
 
-#heading{
-    position: relative;
-    height: 100px;
-    width: 100%;
-    background-image: linear-gradient(75deg,#3C00FF,#BB00FF);
-    margin-bottom: 100px;
-    /* border-bottom: 2px solid white; */
-    box-shadow: 1px 5px 5px 1px;
+#heading {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  background-image: linear-gradient(75deg, #3c00ff, #bb00ff);
+  margin-bottom: 100px;
+  /* border-bottom: 2px solid white; */
+  box-shadow: 1px 5px 5px 1px;
 }
 
-#icon{
-    position: absolute;
-    top: 30px;
-    left: 5%;
-    font-size: 40px;
-    color: #05ee05;
+#icon {
+  position: absolute;
+  top: 30px;
+  left: 5%;
+  font-size: 40px;
+  color: #05ee05;
 }
 
-#titleHeading{
-    position: absolute;
-    top: -10px;
-    left: 10%;
-    font-size: 50px;
-    font-weight: bold;
-    color: wheat;
+#titleHeading {
+  position: absolute;
+  top: -10px;
+  left: 10%;
+  font-size: 50px;
+  font-weight: bold;
+  color: wheat;
 }
 
-#addFileSection{
-    position: relative;
-    height: 80%;
-    width: 60%;
-    left: 20%;
-    bottom: 10%;
-    text-align: center;
-    background-color: white;
-    border-radius: 10px;
+#addFileSection {
+  position: relative;
+  height: 80%;
+  width: 60%;
+  left: 20%;
+  bottom: 10%;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
 }
 
-#form-section{
-    position: relative;
-    top: 20px;
-    border-bottom: 1px solid black;
-    padding: 10px;
-    margin-bottom: 10px;
-    text-align: center;
+#form-section {
+  position: relative;
+  top: 20px;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-#listTitle{
-    position: relative;
-    top: 20px;
+#listTitle {
+  position: relative;
+  top: 20px;
 }
 
 table {
-    width: 80%;
-    height: auto;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 80%;
+  height: auto;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-th, td {
-    border: 1px solid black;
-    padding: 8px;
-    
+th,
+td {
+  border: 1px solid #3600e6;
+  padding: 8px;
 }
 
 th {
-    /* cursor: pointer; */
-
+  /* cursor: pointer; */
+  color: white;
+  background-image: linear-gradient(45deg, #3600e6, #c93bfc);
 }
 
-#fileDetails{
-    position: relative;
-    left: 10%;
-    overflow-x: hidden;
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+table,
+th,
+td {
+  border: 1px solid #3600e6;
+}
+
+#fileDetails {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  left: 10%;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
-#listTitle{
-    position: relative;
-    margin-bottom: 50px;
+#tableHeading  {
+  font-size: 20px;
+}
+
+#listTitle {
+  position: relative;
+  margin-bottom: 50px;
 }
