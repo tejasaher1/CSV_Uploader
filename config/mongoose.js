@@ -1,6 +1,15 @@
-const mongoose = require('mongoose');
+require('dotenv').config();     // Load environment variables from .env file
 
-mongoose.connect('mongodb://127.0.0.1:27017/CSV_File');
+const mongoose = require('mongoose');
+ 
+
+const uri = process.env.MONGODB_URI;
+
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 
 const db = mongoose.connection;
 
