@@ -1,6 +1,11 @@
 const fileModel = require("../models/fileModel");
 
 module.exports.uploadCSVFile = function (req, res) {
+  const uploadDir = path.join(__dirname, "..", "uploads/All_file_stored");
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
+
   fileModel.uploadAvatar(req, res, async function (error) {
     if (error) {
       console.log("Error in uploading file", error);

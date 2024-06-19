@@ -22,9 +22,9 @@ const csvFileSchema = mongoose.Schema(
   }
 );
 
-if (!fs.existsSync(AVATAR_PATH)) {
-  fs.mkdirSync(AVATAR_PATH, { recursive: true });
-}
+// if (!fs.existsSync(AVATAR_PATH)) {
+//   fs.mkdirSync(AVATAR_PATH, { recursive: true });
+// }
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
