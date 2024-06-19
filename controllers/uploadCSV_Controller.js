@@ -1,4 +1,7 @@
 const fileModel = require("../models/fileModel");
+const path = require("path");
+const fs = require("fs");
+
 
 module.exports.uploadCSVFile = function (req, res) {
   const uploadDir = path.join(__dirname, "..", "uploads/All_file_stored");
