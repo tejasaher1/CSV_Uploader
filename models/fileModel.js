@@ -18,6 +18,10 @@ const csvFileSchema = mongoose.Schema({
     timestamps: true
 });
 
+if (!fs.existsSync(AVATAR_PATH)) {
+    fs.mkdirSync(AVATAR_PATH, { recursive: true });
+}
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, path.join(__dirname, '..', AVATAR_PATH));
