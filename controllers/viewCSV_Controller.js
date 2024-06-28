@@ -3,11 +3,15 @@ const fs = require("fs");
 const csv = require("csv-parser");
 const path = require("path");
 
+// Controller function to view a CSV file
+
 module.exports.viewCSV = async function (req, res) {
   try {
+    // Find the file in the database using the file ID from the request parameters
     const file = await fileModel.findById(req.params.id);
     if (!file) {
-      return res.status(404).send("File not found");
+      console.log("File not found");
+      return res.redirect('back');
     }
 
     const results = [];
