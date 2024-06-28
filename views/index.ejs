@@ -52,6 +52,7 @@
 
                 <tr id="tableHeading">
                     <th> File Name </th>
+                    <th> View </th>
                     <th> Created Date </th>
                     <th> </th>
                 </tr>
@@ -60,19 +61,23 @@
                   <tr>
                     <!-- <a href="<%= file.filePath %>"> <%= file.filePath %> </a> -->
                     <td style="width: 70% ;"> 
-                      <a href="/viewCSV/<%= file._id %>"> <%= file.fileName %> </a>
+                      <h4> <%= file.fileName %> </h4>
                     </td>
 
-                   <td style="width: 20%;">
-                      <%- (() => {
-                        const date = new Date(file.createdAt);
-                        date.setHours(date.getUTCHours() + 5);
-                        date.setMinutes(date.getUTCMinutes() + 30);
-                        return date.toString().slice(0, 25);
-                      })() %>
+                    <td style="width: 10%;"">
+                      <a href="/viewCSV/<%= file._id %>">  <i class="fas fa-file"></i> View Document </a>
                     </td>
 
-                    <td style="width: 10% ;">
+                     <td style="width: 15%;">
+                        <%- (() => {
+                          const date = new Date(file.createdAt);
+                          date.setHours(date.getUTCHours() + 5);
+                          date.setMinutes(date.getUTCMinutes() + 30);
+                          return date.toString().slice(0, 25);
+                        })() %>
+                     </td>
+
+                    <td style="width: 5% ;">
                       <form action="/deleteCSV/?id=<%- file._id %>" method="post">
                           <button style="border: none; cursor: pointer;">
                              <i class="fa-solid fa-trash fa-xs" style="position: relative;color: #ac1111;font-size:20px; top:5px "> </i>
