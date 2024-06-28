@@ -62,9 +62,16 @@
                     <td style="width: 70% ;"> 
                       <a href="/viewCSV/<%= file._id %>"> <%= file.fileName %> </a>
                     </td>
-                    <td style="width: 20% ;">
-                      <%- file.createdAt.toString().slice(0, 25) %>
+
+                   <td style="width: 20%;">
+                      <%- (() => {
+                        const date = new Date(file.createdAt);
+                        date.setHours(date.getUTCHours() + 5);
+                        date.setMinutes(date.getUTCMinutes() + 30);
+                        return date.toString().slice(0, 25);
+                      })() %>
                     </td>
+
                     <td style="width: 10% ;">
                       <form action="/deleteCSV/?id=<%- file._id %>" method="post">
                           <button style="border: none; cursor: pointer;">
