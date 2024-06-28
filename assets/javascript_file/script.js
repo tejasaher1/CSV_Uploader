@@ -1,5 +1,7 @@
 const searchDataInput = document.getElementById("searchData");
 
+// Adding event listeners at search bar.
+
 searchDataInput.addEventListener("input", function (event) {
   const query = event.target.value.toLowerCase();
 
@@ -8,12 +10,15 @@ searchDataInput.addEventListener("input", function (event) {
     console.log("Okkeep");
     return;
   }
+  // dataFromServer is a array of object which have files data.
 
   const filteredData = dataFromServer.filter((row) =>
     Object.values(row).some((value) =>
       value.toString().toLowerCase().includes(query)
     )
   );
+
+   // filteredData have all rows which have search results
 
   const tbody = document.querySelector("#tableID tbody");
   tbody.innerHTML = "";
