@@ -30,8 +30,8 @@ CSV Upload Project -
 		├── controllers/
 		│   ├── deleteCSV_controller.js
 		│   └── homeController.js
-		│		└── uploadCSV_Controller.js
-		│		└── viewCSV_Controller.js
+		│   └── uploadCSV_Controller.js
+		│   └── viewCSV_Controller.js
 		│
 		├── models/
 		│   └── fileModel.js
@@ -69,11 +69,11 @@ CSV Upload Project -
 	     cd CSV_Uploader
 	  2- Install dependencies:
 	     npm install
-	 	3- Set up MongoDB:
-			 Make sure MongoDB is running on your local machine. You can use MongoDB Atlas for cloud MongoDB or any other MongoDB instance.
-		4- Create a .env file:
-			 PORT=8080
-			 MONGODB_URI=your_mongodb_connection_string
+	  3- Set up MongoDB:
+	     Make sure MongoDB is running on your local machine. You can use MongoDB Atlas for cloud MongoDB or any other MongoDB instance.
+	  4- Create a .env file:
+	     PORT=8080
+	     MONGODB_URI=your_mongodb_connection_string
 	  5- Run the project:
 	     npm start
 	  6- Access the project:
