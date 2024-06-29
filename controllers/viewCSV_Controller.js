@@ -16,7 +16,7 @@ module.exports.viewCSV = async function (req, res) {
 
     const results = [];
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
+    const limit = parseInt(req.query.limit) || 50;
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
 
