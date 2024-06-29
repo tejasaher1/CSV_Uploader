@@ -13,47 +13,39 @@ This project allows users to upload CSV files and display their data dynamically
 
 * Project Structure - 
 
-	CSV-Upload/
-  |
-	├── assets/
-	│   ├── css/
-	│				 ├── homeStyle.css
-	│				 └── style.css
-	│   └── img/
- 	│		└── javascript_file/
-	│							└── script.js
-  │ 
-	├── config/
-	│   ├── mongoose.js
-	│
-  │
-	├── controllers/
-	│   ├── deleteCSV_controller.js
-	│   └── homeController.js
-	│		└── uploadCSV_Controller.js
-	│		└── viewCSV_Controller.js
-	│
-	├── models/
-	│   └── fileModel.js
-	│
-	├── Routes/
-	│   ├── mainRote.js
-	│   
-	│
-	├── uploads/
-	│   ├── All_file_stored/
-	│   
-	│
-	├── views/
-	│   ├── index.ejs
-	│   └── viewCSV.ejs
-	│
-	├── .env
-	├── .gitignore
-  ├── package-lock.json
-	├── package.json
-	├── README.md
-	└── server.js
+
+
+project-root/
+│
+├── controllers/
+│   ├── fileController.js
+│   └── csvController.js
+│
+├── models/
+│   └── fileModel.js
+│
+├── routes/
+│   ├── index.js
+│   └── fileRoutes.js
+│
+├── public/
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   └── scripts.js
+│
+├── views/
+│   ├── index.ejs
+│   └── viewCSV.ejs
+│
+├── uploads/
+│   └── (uploaded files)
+│
+├── .gitignore
+├── package.json
+├── README.md
+└── server.js
+
 
 
 * Prerequisites - 
