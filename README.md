@@ -3,13 +3,13 @@ CSV Upload Project -
 	This project allows users to upload CSV files and display their data dynamically in a web interface. The project includes features such as uploading csv file, search data and pagination.
 
 	* Features - 
-		1] Upload CSV files with dynamic column headers.
-		2] Display a list of all uploaded CSV files.
-		3] View CSV data in a table format.
-		4] Front-end search functionality.
-		5] Front-end and server-side validation for CSV file uploads.
-		6] Pagination of table data (max 10 records per page).
-		7] Chart integration to display a selected column.
+	  1] Upload CSV files with dynamic column headers.
+	  2] Display a list of all uploaded CSV files.
+	  3] View CSV data in a table format.
+	  4] Front-end search functionality.
+	  5] Front-end and server-side validation for CSV file uploads.
+	  6] Pagination of table data (max 10 records per page).
+	  7] Chart integration to display a selected column.
 
 	* Project Structure - 
 	
@@ -58,9 +58,9 @@ CSV Upload Project -
 
 
 	* Prerequisites - 
-		1- Node.js
-		2- npm (Node Package Manager)
-		3- MongoDB
+	  1- Node.js
+	  2- npm (Node Package Manager)
+	  3- MongoDB
 	
 	
 	* Setup - 
