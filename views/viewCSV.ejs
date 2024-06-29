@@ -41,11 +41,11 @@
 
         <div class="pagination">
             <% if (currentPage > 1) { %>
-                <a href="/viewCSV/<%= file._id %>?page=<%= currentPage - 1 %>&limit=10">Previous</a>
+                <a href="/viewCSV/<%= file._id %>?page=<%= currentPage - 1 %>&limit=50">Previous</a>
             <% } %>
             <span>Page <%= currentPage %> of <%= totalPages %></span>
             <% if (currentPage < totalPages) { %>
-                <a href="/viewCSV/<%= file._id %>?page=<%= currentPage + 1 %>&limit=10">Next</a>
+                <a href="/viewCSV/<%= file._id %>?page=<%= currentPage + 1 %>&limit=50">Next</a>
             <% } %>
         </div>
     </div>
