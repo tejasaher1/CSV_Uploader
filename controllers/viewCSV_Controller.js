@@ -38,5 +38,6 @@ module.exports.viewCSV = async function (req, res) {
   } catch (err) {
     console.error("Error reading the file:", err);
     res.status(500).send("Error reading file");
+    return res.redirect('back');
   }
 };
